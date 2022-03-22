@@ -42,10 +42,12 @@ COPY deploy-container/entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
 ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
 #您可以在此处为您的环境添加自定义软件和依赖项。一些例子：
 
-#运行代码服务器 --install-extension esbenp.prettier-vscode 
-#运行 sudo apt-get install -y build-essential 
-#运行复制 myTool /home/coder/myTool
+# You can add custom software and dependencies for your environment here. Some examples:
 
-#安装NodeJS
-运行sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
-运行sudo apt-get install -y nodejs
+# RUN code-server --install-extension esbenp.prettier-vscode
+# RUN sudo apt-get install -y build-essential
+# RUN COPY myTool /home/coder/myTool
+
+# Install NodeJS
+RUN sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
+RUN sudo apt-get install -y nodejs
